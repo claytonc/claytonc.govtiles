@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone">
+  <record field="available_tiles"
+          interface="collective.cover.controlpanel.ICoverSettings"
+          name="collective.cover.controlpanel.ICoverSettings.available_tiles">
+    <value purge="true">
+      <element>banner_rotativo_pasta</element>
+      <element>colecao_coluna</element>
+    </value>
+  </record>
+
+</registry>

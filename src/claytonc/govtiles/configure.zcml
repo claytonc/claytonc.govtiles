@@ -1,0 +1,42 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="claytonc.govtiles">
+
+  <i18n:registerTranslations directory="locales" />
+
+  <includeDependencies package="." />
+
+  <include package=".tiles" />
+
+  <!-- Registra pasta de elementos estaticos -->
+  <browser:resourceDirectory
+      name="claytonc.govtiles"
+      directory="static"
+      />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="claytonc.govtiles: Instalação do Pacote"
+      directory="profiles/default"
+      description="Instala o pacote claytonc.govtiles dentro de um portal Plone."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="claytonc.govtiles: Remoção do Pacote"
+      directory="profiles/uninstall"
+      description="Desistala o pacote claytonc.govtiles de um portal Plone."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="claytonc.govtiles-hiddenprofiles" />
+
+</configure>

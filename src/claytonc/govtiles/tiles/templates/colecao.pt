@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="collective.cover">
+
+    <body tal:define="is_empty view/is_empty">
+        <p tal:condition="is_empty" i18n:translate="">
+            Please drop a collection here to fill the tile.
+        </p>
+        <div class="tile-content cover-collection-tile" tal:condition="not:is_empty">
+            <tal:results tal:define="results view/results|nothing;
+                                     conf_fields view/configured_fields;">
+                <div tal:condition="python: not results['itens']">
+                    <p i18n:translate="">The collection doesn't have any results.</p>
+                </div>
+
+                <div class="tile-header"
+                      tal:condition="view/show_header">
+                    <span tal:content="view/data/header" />
+                </div>
+
+                <tal:block tal:condition="python:results['itens']">
+                    <tal:block tal:define="tag python:results['htmlconf']">
+                    <div tal:attributes="class python:'collection-item-colunas-0'+str(results['colunm'])">
+                        <ul class="cover-collection-tile" tal:repeat="colecao python:results['itens']">
+                            <li class="collection-item" tal:repeat="item colecao">
+                                <h1 tal:condition="python:tag =='h1'">
+                                    <a tal:attributes="href python:item.getURL();
+                                                       title python:item.Description()">
+                                      <span tal:content="python:item.Title()"/></a>
+                                </h1>
+                                <h2 tal:condition="python:tag=='h2'">
+                                   <a tal:attributes="href python:item.getURL();
+                                                       title python:item.Description()">
+                                      <span tal:content="python:item.Title()"/></a>
+                                </h2>
+                                <h3 tal:condition="python:tag=='h3'">
+                                   <a tal:attributes="href python:item.getURL();
+                                                       title python:item.Description()">
+                                      <span tal:content="python:item.Title()"/></a>
+                                </h3>
+                                <h4 tal:condition="python:tag=='h4'">
+                                   <a tal:attributes="href python:item.getURL();
+                                                       title python:item.Description()">
+                                      <span tal:content="python:item.Title"/></a>
+                                </h4>
+                            </li>
+                        </ul>
+                        <div class="visualClear"><!-- --></div>
+                    </div>
+                    </tal:block>
+                </tal:block>
+
+                <div class="tile-footer" tal:condition="view/show_footer">
+                    <a tal:attributes="href view/collection_url" tal:content="view/data/footer" />
+                </div>
+
+                <div class="visualClear"><!-- --></div>
+            </tal:results>
+        </div>
+    </body>
+</html>
+

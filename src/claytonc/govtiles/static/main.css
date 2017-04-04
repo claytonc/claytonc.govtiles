@@ -1,0 +1,81 @@
+/* Collection com colunas */
+
+.collection-item-colunas-02 ul {
+    float: left;
+    width: 50%;
+    margin-left: 0 !important;
+}
+
+.collection-item-colunas-03 ul {
+    float: left;
+    width: 33.33%;
+    margin-left: 0 !important;
+}
+
+/* link externo */
+
+.link-externo .collection-item-colunas-01 ul li,
+.link-externo .collection-item-colunas-02 ul li,
+.link-externo .collection-item-colunas-03 ul li{
+    list-style: none !important;
+}
+
+.link-externo .collection-item-colunas-01 ul,
+.link-externo .collection-item-colunas-02 ul,
+.link-externo .collection-item-colunas-03 ul{
+    margin-left: 0 !important;
+}
+
+.link-externo .collection-item-colunas-01 li,
+.link-externo .collection-item-colunas-02 li,
+.link-externo .collection-item-colunas-03 li{
+     margin-bottom: 0 !important;
+ }
+
+.link-externo .collection-item-colunas-02 li,
+.link-externo .collection-item-colunas-03 li{
+    border: 0;
+}
+
+.link-externo .collection-item-colunas-02 ul li.even,
+.link-externo .collection-item-colunas-03 ul li.even,
+.link-externo .collection-item-colunas-03 {
+    background: #eeeff1 none repeat scroll 0 0 !important;
+}
+
+.link-externo .collection-item-colunas-02 ul li h2,
+.link-externo .collection-item-colunas-03 ul li h2 {
+    line-height:1.36em !important;
+}
+
+/* lista horizontal*/
+
+
+.lista-horizontal .collection-item-colunas-01 ul li,
+.lista-horizontal .collection-item-colunas-02 ul li,
+.lista-horizontal .collection-item-colunas-03 ul li {
+    list-style: none !important;
+}
+
+.lista-horizontal .collection-item-colunas-01 ul,
+.lista-horizontal .collection-item-colunas-02 ul,
+.lista-horizontal .collection-item-colunas-03 ul{
+    margin-left: 0 !important;
+}
+
+.lista-horizontal .collection-item-colunas-02 .collection-item,
+.lista-horizontal .collection-item-colunas-03 .collection-item{
+    float: none;
+    width: 100%;
+}
+
+
+@media only screen and (min-width : 320px) and (max-width : 768px) {
+
+    .collection-item-colunas-02 ul,
+    .collection-item-colunas-03 ul {
+        float: none;
+        width: 100%;
+    }
+
+}

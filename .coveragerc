@@ -1,0 +1,6 @@
+[report]
+include =
+    src/claytonc/*
+omit =
+    */test*
+    */upgrades/*

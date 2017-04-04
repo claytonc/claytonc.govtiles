@@ -1,0 +1,33 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  i18n_domain="claytonc.govtiles">
+
+  <include package="plone.tiles" file="meta.zcml" />
+
+  <plone:tile
+      name="colecao_coluna"
+      title="Coleção em colunas"
+      description="Um tile com links em colunas"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".colecao_coluna.IColecaoColunaTile"
+      class=".colecao_coluna.ColecaoColunaTile"
+      permission="zope2.View"
+      for="*"
+      />
+
+  <plone:tile
+      name="banner_rotativo_pasta"
+      icon="++resource++brasil.gov.tiles/tile-banner_rotativo.png"
+      title="Banner Rotativo Pasta"
+      description="Tile que exibe um banner rotativo com links e imagens"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".banner_rotativo_pasta.IBannerRotativoPastaTile"
+      class=".banner_rotativo_pasta.BannerRotativoPastaTile"
+      permission="zope2.View"
+      for="*"
+      i18n:attributes="title; description"
+      />
+
+</configure>
